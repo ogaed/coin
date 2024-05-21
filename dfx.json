@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "barazacoin_backend": {
+      "main": "src/barazacoin_backend/main.mo",
+      "type": "motoko"
+    },
+    "barazacoin_frontend": {
+      "dependencies": [
+        "barazacoin_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/barazacoin_frontend/src/index.html"
+      },
+      "source": [
+        "src/barazacoin_frontend/assets",
+        "dist/barazacoin_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
