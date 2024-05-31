@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/barazacoin_backend"
+]
+resolver = "2"
