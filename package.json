@@ -9,17 +9,34 @@
     "Canister"
   ],
   "scripts": {
-    "build": "webpack",
     "prebuild": "dfx generate",
-    "start": "webpack serve --mode development --env development",
+    
     "deploy:local": "dfx deploy --network=local",
     "deploy:ic": "dfx deploy --network=ic",
-    "generate": "dfx generate barazacoin_backend"
+    "generate": "dfx generate barazacoin_backend",
+    "setup": "npm i && dfx canister create DSTC_backend && dfx generate DSTC_backend && dfx deploy",
+    "start": "vite --port 3000",
+    "build": " tsc && vite build",
+    "format": "prettier --write \"src/**/*.{json,js,jsx,ts,tsx,css,scss}\""
   },
   "dependencies": {
     "@dfinity/agent": "^1.3.0",
+    "@dfinity/auth-client": "^1.3.0",
     "@dfinity/candid": "^1.3.0",
-    "@dfinity/principal": "^1.3.0"
+    "@dfinity/principal": "^1.3.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-loader-spinner": "^6.1.6",
+    "react-masonry-css": "^1.0.16",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-router-dom": "^6.23.1",
+    "react-to-print": "^2.15.1",
+    "recharts": "^2.12.7",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "assert": "2.0.0",
@@ -34,7 +51,17 @@
     "util": "0.12.4",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.8.1"
+    "webpack-dev-server": "^4.8.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "sass": "^1.77.4",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
+    "vite-plugin-environment": "^1.1.3"
   },
   "engines": {
     "node": "^12 || ^14 || ^16 || >=17",
