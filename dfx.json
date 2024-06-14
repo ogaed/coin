@@ -1,21 +1,20 @@
 {
   "canisters": {
-    "barazacoin_backend": {
-      "main": "src/barazacoin_backend/main.mo",
-      "type": "motoko"
+    "DSTC_backend": {
+      "candid": "src/DSTC_backend/DSTC_backend.did",
+      "package": "DSTC_backend",
+      "type": "rust"
     },
-    "barazacoin_frontend": {
-      "dependencies": [
-        "barazacoin_backend"
-      ],
-      "frontend": {
-        "entrypoint": "src/barazacoin_frontend/src/index.html"
-      },
-      "source": [
-        "src/barazacoin_frontend/assets",
-        "dist/barazacoin_frontend/"
-      ],
-      "type": "assets"
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "icrc1_ledger.did",
+      "wasm": "icrc1_ledger.wasm.gz"
+    },
+    "DSTC_frontend": {
+      "dependencies": ["DSTC_backend"],
+      "source": ["src/DSTC_frontend/dist"],
+      "type": "assets",
+      "workspace": "DSTC_frontend"
     }
   },
   "defaults": {

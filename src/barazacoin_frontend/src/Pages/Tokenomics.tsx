@@ -10,8 +10,14 @@ import {
 } from "@mui/material";
 
 const tokenomicsDetails = [
+<<<<<<< HEAD
   { title: "Total Supply", content: "400,000,000 DSTC" },
 
+=======
+  { title: "Total Supply", content: "1,000,000,000 DSTC" },
+  { title: "Circulating Supply", content: "500,000,000 DSTC" },
+  { title: "Market Cap", content: "$500,000,000" },
+>>>>>>> refs/remotes/origin/main
   { title: "Initial Price", content: "$0.10 per DSTC" },
   {
     title: "Allocation",

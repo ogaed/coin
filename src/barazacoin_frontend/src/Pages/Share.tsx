@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import  { useState } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> refs/remotes/origin/main
 import {
   Container,
   TextField,
@@ -57,6 +61,7 @@ const darkTheme = createTheme({
   },
 });
 
+<<<<<<< HEAD
 const PublishStoryComponent= ({principal}:any) => {
 
 
@@ -71,10 +76,20 @@ const PublishStoryComponent= ({principal}:any) => {
   const agent:any = new HttpAgent();
   //the id here is local one
   actor = createActor("kc5xa-pqaaa-aaaap-qhk3a-cai", {
+=======
+const PublishStoryComponent: React.FC = () => {
+  const navigate = useNavigate();
+
+  let actor = barazacoin_backend;
+  const agent = new HttpAgent();
+  //the id here is local one
+  actor = createActor("avqkn-guaaa-aaaaa-qaaea-cai", {
+>>>>>>> refs/remotes/origin/main
     agent,
   });
   const [title, setTitle] = useState("");
   const [story, setStory] = useState("");
+<<<<<<< HEAD
   const [disabled, setDisabled]=useState(false)
 
   const handlePublish = async () => {
@@ -108,11 +123,34 @@ else{
   return (
     <ThemeProvider theme={darkTheme}>
    
+=======
+
+  const handlePublish = async () => {
+    let story_no_lines = story.replace(/\r?\n|\r/g, " ");
+    let words = story_no_lines.split(" ");
+
+    let res = await actor.publish_barazacoin(words, title);
+
+    if (res.length > 0) {
+      alert("Succesfully published a barazacoin");
+      navigate("/");
+    } else {
+      alert("Could not publish a barazacoin");
+    }
+  };
+
+  return (
+    <ThemeProvider theme={darkTheme}>
+>>>>>>> refs/remotes/origin/main
       <Container maxWidth="sm" sx={{ mt: 4 }}>
         <Card variant="outlined" sx={{ p: 3 }}>
           <CardContent>
             <Typography variant="h5" gutterBottom>
+<<<<<<< HEAD
               Share Your Baraza Story
+=======
+              Share Your Barazacoins Story
+>>>>>>> refs/remotes/origin/main
             </Typography>
             <Box mt={2} mb={2}>
               <TextField
@@ -134,7 +172,10 @@ else{
               />
             </Box>
             <Button
+<<<<<<< HEAD
             disabled={disabled}
+=======
+>>>>>>> refs/remotes/origin/main
               variant="contained"
               color="primary"
               fullWidth
@@ -149,4 +190,8 @@ else{
   );
 };
 
+<<<<<<< HEAD
 export default PublishStoryComponent;
+=======
+export default PublishStoryComponent;
+>>>>>>> refs/remotes/origin/main
